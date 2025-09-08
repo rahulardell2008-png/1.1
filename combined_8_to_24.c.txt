@@ -1,0 +1,62 @@
+// combined_8_to_24.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+// 8. Dollars -> Rs
+void p8(){ float d; printf("Enter dollars: "); scanf("%f",&d); printf("Rs = %.2f\n", d*48); }
+// 9. Rs -> Dollars
+void p9(){ float rs; printf("Enter rupees: "); scanf("%f",&rs); printf("Dollars = %.2f\n", rs/48); }
+// 10. Dollars -> Pound
+void p10(){ float d; printf("Enter dollars: "); scanf("%f",&d); printf("Pounds = %.2f\n", (d*48)/70); }
+// 11. Grams -> Kg
+void p11(){ float g; printf("Enter grams: "); scanf("%f",&g); printf("Kg = %.3f\n", g/1000); }
+// 12. Kg -> Grams
+void p12(){ float kg; printf("Enter kg: "); scanf("%f",&kg); printf("Grams = %.2f\n", kg*1000); }
+// 13. Bytes -> KB, MB, GB
+void p13(){ long b; printf("Enter bytes: "); scanf("%ld",&b); 
+    printf("KB = %.2f\n", b/1024.0);
+    printf("MB = %.2f\n", b/(1024.0*1024));
+    printf("GB = %.6f\n", b/(1024.0*1024*1024));
+}
+// 14. Celsius -> Fahrenheit
+void p14(){ float c; printf("Enter Celsius: "); scanf("%f",&c); printf("F = %.2f\n",(9.0/5)*c+32); }
+// 15. Fahrenheit -> Celsius
+void p15(){ float f; printf("Enter Fahrenheit: "); scanf("%f",&f); printf("C = %.2f\n",(f-32)*5.0/9); }
+// 16. Interest
+void p16(){ float P,R,N; printf("Enter P R N: "); scanf("%f%f%f",&P,&R,&N); printf("Interest = %.2f\n",(P*R*N)/100); }
+// 17. Square area & perimeter
+void p17(){ float L; printf("Enter side length: "); scanf("%f",&L); printf("Area = %.2f, Perimeter = %.2f\n",L*L,4*L); }
+// 18. Rectangle area & perimeter
+void p18(){ float L,B; printf("Enter length & breadth: "); scanf("%f%f",&L,&B); printf("Area = %.2f, Perimeter = %.2f\n",L*B,2*(L+B)); }
+// 19. Circle area
+void p19(){ float R; printf("Enter radius: "); scanf("%f",&R); printf("Area = %.2f\n",(22/7.0)*R*R); }
+// 20. Triangle area
+void p20(){ float H,B; printf("Enter height & base: "); scanf("%f%f",&H,&B); printf("Area = %.2f\n",(H*B)/2); }
+// 21. Net salary (10% allowance, 3% deduction)
+void p21(){ float g; printf("Enter gross salary: "); scanf("%f",&g); float net=g+0.1*g-0.03*g; printf("Net Salary = %.2f\n", net); }
+// 22. Net sales (10% discount)
+void p22(){ float g; printf("Enter gross sales: "); scanf("%f",&g); float net=g-0.1*g; printf("Net Sales = %.2f\n", net); }
+// 23. Average of 3 subjects
+void p23(){ float a,b,c; printf("Enter 3 subject marks: "); scanf("%f%f%f",&a,&b,&c); float t=a+b+c; printf("Total = %.2f, Average = %.2f\n",t,t/3); }
+// 24. Swap two values
+void p24(){ int a,b; printf("Enter two numbers: "); scanf("%d%d",&a,&b); int t=a;a=b;b=t; printf("After swap: a=%d b=%d\n",a,b); }
+
+int main(){
+    while(1){
+        int opt;
+        printf("\nChoose program (8-24) or 0 to exit: ");
+        if(scanf("%d",&opt)!=1) break;
+        switch(opt){
+            case 0: exit(0);
+            case 8: p8(); break; case 9: p9(); break; case 10: p10(); break;
+            case 11: p11(); break; case 12: p12(); break; case 13: p13(); break;
+            case 14: p14(); break; case 15: p15(); break; case 16: p16(); break;
+            case 17: p17(); break; case 18: p18(); break; case 19: p19(); break;
+            case 20: p20(); break; case 21: p21(); break; case 22: p22(); break;
+            case 23: p23(); break; case 24: p24(); break;
+            default: printf("Invalid option!\n");
+        }
+    }
+    return 0;
+}
